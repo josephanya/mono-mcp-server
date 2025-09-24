@@ -30,7 +30,8 @@ export class MonoClient {
         if (!response.ok) {
             throw new Error(`HTTP error: ${response.status} ${response.statusText}`);
         }
-        return response.json();
+        const result = await response.json();
+        return JSON.stringify(result, null, 2)
     }
 
     getWalletBalance = async () => {
