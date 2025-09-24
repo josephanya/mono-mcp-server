@@ -184,12 +184,6 @@ src/
     error.handler.ts       # Global process error handling
 ```
 
-## Troubleshooting
-- Unknown file extension ".ts": run with a TS loader, e.g. `npx tsx src/index.ts http 3000` or `node --loader ts-node/esm src/index.ts http 3000`.
-- ERR_REQUIRE_ESM (e.g. from `node-fetch`): ensure you run in ESM mode (Node 18+, use `tsx` or `ts-node --esm`).
-- Port type errors: ensure numbers are passed to `app.listen` (parse env vars to numbers).
-- MCP content must be strings: ensure tool results returned in `content.text` are strings. If you use objects, wrap with `JSON.stringify(result, null, 2)`.
-
 ## Environment
 - `MONO_SECRET_KEY` (required): Your Mono Secret Key. The process exits if it is not set.
 
