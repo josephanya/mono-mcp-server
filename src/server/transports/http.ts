@@ -5,7 +5,7 @@ import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/
 import { randomUUID } from 'node:crypto';
 import { isInitializeRequest } from '@modelcontextprotocol/sdk/types.js';
 
-export async function runHttpTransport(server: McpServer, port = 3000) {
+export async function runHttpTransport(server: McpServer, port: number) {
     console.error(`Starting MCP server (HTTP) on port ${port}`);
     const app = express();
 

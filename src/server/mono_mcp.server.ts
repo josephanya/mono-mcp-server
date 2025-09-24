@@ -10,6 +10,10 @@ export class MonoMCPServer {
         this.server = new McpServer({
             name: 'mono-mcp-server',
             version: '1.0.0',
+            capabilities: {
+                resources: {},
+                tools: {}
+            }
         });
 
         setupHandlers(this.server);
@@ -19,7 +23,7 @@ export class MonoMCPServer {
         return runStdioTransport(this.server);
     }
 
-    async runHTTP(port = 3000) {
+    async runHTTP(port: number) {
         return runHttpTransport(this.server, port);
     }
 }
